@@ -24,24 +24,31 @@ function myFunction1 (){
 	//pas de koptekst van de pagina aan
 	//
 	//schrijf hier jouw code:
+    document.getElementById("style1").innerHTML = "Javascript zorgt voor hersenbeschadiging bij studenten";
+   
+
 }
 function myFunction2 (){
 	//
 	//pas de tekst die IN de div tag staat aan
 	//
 	//schrijf hier jouw code:
+    document.getElementById("uitkomst").innerHTML = "Uit studie is gebleken dat studenten veel hoofdpijn krijgen doot Javascript.";
 }
 function myFunction3 (){
 	//
 	//voeg tekst TOE aan de div tag (dus laat de bestaande tekst staan)
 	//
 	//schrijf hier jouw code:
+    document.getElementById("uitkomst").innerHTML += " Das echt waar!";
 }
 function myFunction4 (){
 	//
 	//plaats via een prompt de door de gebruiker ingevoerde tekst IN de div tag
 	//
 	//schrijf hier jouw code:
+    var tekst = prompt("Hoi hoe gaat het met jou?");
+	document.getElementById("uitkomst").innerHTML =  tekst ;
 }
 function myFunction5 ()
 {
@@ -49,12 +56,15 @@ function myFunction5 ()
 	//hoeveel <a> tags zijn er op de pagina aanwezig? zet de uitkomst IN de div tag...
 	//
 	//schrijf hier jouw code:
+    var aantal = document.getElementsByTagName("a").length;
+	document.getElementById("uitkomst").innerHTML = "Er zijn " + aantal + " <a> tags op de pagina aanwezig";
 }
 function myFunction6 (){
 	//
 	//pas de tekst van de derde link in het document aan
 	//
 	//schrijf hier jouw code:
+    document.getElementsByTagName("a")[2].innerHTML = "Hoofdpijn.nl ";
 }
 function myFunction7 (){
 	//
@@ -62,17 +72,30 @@ function myFunction7 (){
 	//extra: als de kleur wit is wordt die rood, en als die rood is wordt die weer wit
 	//
 	//schrijf hier jouw code:
+    var div = document.getElementById("uitkomst");
+	if (div.style.backgroundColor == "white") {
+		div.style.backgroundColor = "red";
+	} else {
+		div.style.backgroundColor = "white";
+	}
 }
 function myFunction8 (){
 	//
 	//extra: voeg een nieuw element <div> tag toe aan je pagina en zet daarin een tekst
 	//naar keuze
 	//
+    
+const mijndivje = document.createElement("div");
+const mijntekstje = document.createTextNode("hoiii.");
+mijndivje.appendChild(mijntekstje);
+const element = document.getElementById("uitkomst");
+element.appendChild(mijndivje);
+
 }
 </script>
 </head>
 <body>
-<span class="style1">Hier staat de koptekst van de pagina.</span><br />
+<span id ="style1">Javascript geeft hoofdpijn bij veel jongeren!</span><br />
 <br />
 Dit is de pagina waarmee je de challenge gaat maken. <br />
 Zoals je ziet is deze pagina niet veel bijzonders.<br />
